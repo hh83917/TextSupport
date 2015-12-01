@@ -1,0 +1,16 @@
+<h2>Tickets</h2>
+<div>
+  <button ui-sref="home">Get Support</button>
+</div>
+<div>
+  <div ng-repeat="(number, val) in tickets">
+    <p>{{number}}</p>
+    <div ng-repeat='message in val'>
+      <p>{{message.date_sent}}</p>
+      <p>{{message.body}}</p>
+    </div>
+    <input type="text" ng-model='newReply'>
+    <button ng-click="send(number, newReply)">Send</button>
+    <hr>
+  </div>
+</div>
